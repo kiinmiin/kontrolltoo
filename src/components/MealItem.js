@@ -1,3 +1,5 @@
+import React from "react"
+
 const MealItem = (props) => {
     return (
         <li>
