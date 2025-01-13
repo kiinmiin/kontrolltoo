@@ -2,6 +2,7 @@ const fs = require("fs/promises");
 const bodyParser = require("body-parser")
 const path = require("path");
 const express = require("express");
+const mealsData = require('./data/meals.json')
 
 const app = express();
 
@@ -17,8 +18,9 @@ app.use((req, res, next) => {
 });
 
 app.get("/meals", async (req, res) => {
-  const meals = "[]" // data should be read from file
-  res.json(JSON.parse(meals));
+  const meals = mealsData
+  console.log(meals)
+  res.json(meals);
 });
 
 app.use((req, res) => {
